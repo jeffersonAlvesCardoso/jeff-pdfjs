@@ -1,25 +1,6 @@
 {
-  "name": "pdf.js-dist",
-  "version": "0.1.0",
-  "description": "Compiled version of pdf.js",
-  "main": "pdf.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "pdf"
-  ],
-  "author": "",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/jeffersonAlvesCardoso/jeff-pdfjsissues"
-  },
-  "homepage": "https://github.com/jeffersonAlvesCardoso/jeff-pdfjs#readme",
-  "devDependencies": {
-    "grunt": "^0.4.5",
-    "css-prefix": "git+https://github.com/jeffersonAlvesCardoso/jeff-pdfjs#0.0.2+moesjarraf.3"
-  },
-  "dependencies": {
-    "uglifycss": "0.0.25"
-  }
+  "name": "js",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {}
 }
