@@ -1,1 +1,57 @@
-<div id="app"></div>
+<html>
+
+<head>
+    <title>PDF.js viewer</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="node_modules/pdf.js-viewer/pdf.js"></script>
+    <link rel="stylesheet" href="total.css">
+    <!-- <link rel="stylesheet" href="node_modules/pdf.js-viewer/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="node_modules/pdf.js-viewer/font-awesome/css/font-awesome.min.css">
+    <link rel="resource" type="application/l10n" href="node_modules/pdf.js-viewer/locale/locale.properties">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="col-md-9 col-sm-12" style="height: auto !important; min-height: 0px !important;">
+        <div class="row" style="height: auto !important;">
+            <!-- BEGIN LEFT SIDEBAR -->
+            <div class="col-md-12 col-sm-12 blog-item" style="height: auto !important; min-height: 0px !important;">
+                <div class="blog-item-img">
+                    <div class="pdfjs" id="player_frame">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        var file = 'some-document.pdf';
+        // waiting for page load, loading the content of viewer.html inside pdfjs THEN load file
+        $(function () {
+            $('div.pdfjs').load("node_modules/pdf.js-viewer/viewer.html", function () {
+                window.PDFJS.webViewerLoad();
+                window.PDFViewerApplication.open(file);
+            });
+        });
+        // note that the file can also be a Uint8Array if you want to serve binary data
+        var file = 'some-document.pdf';
+
+        // This initializes the webviewer, the file may be passed in to it to initialize the viewer with a pdf directly
+        window.PDFJS.webViewerLoad();
+
+        // open a file in the viewer
+        window.PDFViewerApplication.open(file);
+    </script>
+</body>
+</html>
